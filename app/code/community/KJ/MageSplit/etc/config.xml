@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <KJ_MageSplit>
+            <version>1.0.0</version>
+        </KJ_MageSplit>
+    </modules>
+    <global>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <magesplit>
+                    <file>kj_magesplit.xml</file>
+                </magesplit>
+            </updates>
+        </layout>
+    </frontend>
+</config>

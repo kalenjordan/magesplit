@@ -1,0 +1,4 @@
+app/etc/modules/KJ_MageSplit.xml                            app/etc/modules/KJ_MageSplit.xml
+app/code/community/KJ/MageSplit                             app/code/community/KJ/MageSplit
+app/design/frontend/base/default/layout/kj_magesplit.xml    app/design/frontend/base/default/layout/kj_magesplit.xml
+js/kj_magesplit                                             js/kj_magesplit
