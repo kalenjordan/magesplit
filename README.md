@@ -41,3 +41,21 @@ or "$experimentName: Disabled".
 So, you get the idea - crazy simple and probably not very useful if you're
 doing anything fancy.  But if you're just getting started, may save you
 a minute or two fussing around with javascript cookies.
+
+**ProTips**
+
+*1. Use your debug console*
+
+Use your Console to see whether or not the test is enabled.
+
+*2. URL Override*
+
+If you want to force the test to be enabled or disabled, say because you're
+tired of randomly opening and closing Incognito windows over and over, 
+you can just go to:
+
+    http://www.yourswankymagentoinstall.com/path/?magesplit_red_addtocart_button=1
+    
+or
+    
+    http://www.yourswankymagentoinstall.com/path/?magesplit_red_addtocart_button=0
