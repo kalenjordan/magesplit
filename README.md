@@ -16,7 +16,7 @@ testing services that are out there.
 
 Install using modman:
 
-    modman clone git@github.com:kalenjordan/magesplit.git
+    modman clone magesplit git@github.com:kalenjordan/magesplit.git
     
 Then, to create a test, just pop into one of your `phtml` files, and:
 
