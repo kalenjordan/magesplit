@@ -30,7 +30,7 @@ function MageSplit()
     {
         if (typeof(jQuery.cookie(this._getCookieName())) == 'undefined') {
             var random = Math.random(0, 1);
-            jQuery.cookie(this._getCookieName(), random);
+            jQuery.cookie(this._getCookieName(), random, {expires: 30});
         }
 
         return jQuery.cookie(this._getCookieName());
