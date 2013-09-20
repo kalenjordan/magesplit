@@ -2,6 +2,9 @@ function MageSplit()
 {
     this._name = null;
 
+    // Ten year cookie duration is what optimizely uses.
+    this._cookieDuration = 3650;
+
     this.run = function(name, callback)
     {
         this._name = name;
@@ -30,7 +33,7 @@ function MageSplit()
     {
         if (typeof(jQuery.cookie(this._getCookieName())) == 'undefined') {
             var random = Math.random(0, 1);
-            jQuery.cookie(this._getCookieName(), random, {expires: 30});
+            jQuery.cookie(this._getCookieName(), random, {expires: this._cookieDuration});
         }
 
         return jQuery.cookie(this._getCookieName());
