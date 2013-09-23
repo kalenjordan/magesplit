@@ -19,11 +19,16 @@ function MageSplit()
         }
     };
 
-    this.setName = function()
+    this.getName = function()
+    {
+        return this._name;
+    };
+
+    this.setName = function(name)
     {
         this._name = name;
         return this;
-    }
+    };
 
     this.isCookieSet = function()
     {
