@@ -7,9 +7,9 @@ function MageSplit()
 
     this.run = function(name, callback)
     {
-        this._name = name;
+        this.setName(name);
 
-        if (this._isTriggered()) {
+        if (this.isTriggered()) {
             _gaq.push(['_trackEvent', 'MageSplit', this._name + ': Enabled']);
             this._log("Enabled (" + this._getRandomNumber() + ")");
             callback();
@@ -19,7 +19,18 @@ function MageSplit()
         }
     };
 
-    this._isTriggered = function()
+    this.setName = function()
+    {
+        this._name = name;
+        return this;
+    }
+
+    this.isCookieSet = function()
+    {
+        return (typeof(jQuery.cookie(this._getCookieName())) != 'undefined');
+    };
+
+    this.isTriggered = function()
     {
         if (this._getUrlOverride() !== null) {
             this._log("Overriden by URL");
@@ -31,13 +42,13 @@ function MageSplit()
 
     this._getRandomNumber = function()
     {
-        if (typeof(jQuery.cookie(this._getCookieName())) == 'undefined') {
+        if (! this.isCookieSet()) {
             var random = Math.random(0, 1);
             jQuery.cookie(this._getCookieName(), random, {expires: this._cookieDuration});
         }
 
         return jQuery.cookie(this._getCookieName());
-    }
+    };
 
     this._getCookieName = function()
     {
