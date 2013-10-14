@@ -5,8 +5,20 @@
             <version>1.0.0</version>
         </KJ_MageSplit>
     </modules>
+
     <global>
+        <events>
+            <sales_order_place_after>
+                <observers>
+                    <magesplit_sales_order_place_after>
+                        <class>KJ_MageSplit_Model_Observer</class>
+                        <method>salesOrderPlaceAfter</method>
+                    </magesplit_sales_order_place_after>
+                </observers>
+            </sales_order_place_after>
+        </events>
     </global>
+
     <frontend>
         <layout>
             <updates>
