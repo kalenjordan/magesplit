@@ -23,8 +23,6 @@ class KJ_MageSplit_Model_Observer
         }
 
         $this->_writeLineToFile($line);
-
-        throw new Exception("roll back");
     }
 
     protected function _writeLineToFile($line)
