@@ -27,9 +27,7 @@ class KJ_MageSplit_Model_Observer
 
     protected function _writeLineToFile($line)
     {
-        $dataDir = Mage::getModuleDir('', 'KJ_MageSplit') . '/data';
-        $filePath = $dataDir . '/order.txt';
-
+        $filePath = Mage::helper('magesplit')->getDataFilePath();
         file_put_contents($filePath, $line . "\n", FILE_APPEND);
 
         return $this;

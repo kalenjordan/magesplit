@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<layout>
+    <admin_magesplit_adminhtml_result_index>
+        <reference name="content">
+            <block type="magesplit/adminhtml_result" name="results" template="kj_magesplit/result.phtml" />
+        </reference>
+    </admin_magesplit_adminhtml_result_index>
+</layout>

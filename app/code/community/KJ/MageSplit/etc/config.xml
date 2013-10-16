@@ -17,6 +17,18 @@
                 </observers>
             </sales_order_place_after>
         </events>
+
+        <blocks>
+            <magesplit>
+                <class>KJ_MageSplit_Block</class>
+            </magesplit>
+        </blocks>
+
+        <helpers>
+            <magesplit>
+                <class>KJ_MageSplit_Helper</class>
+            </magesplit>
+        </helpers>
     </global>
 
     <frontend>
@@ -28,4 +40,27 @@
             </updates>
         </layout>
     </frontend>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <magesplit>
+                    <file>kj_magesplit.xml</file>
+                </magesplit>
+            </updates>
+        </layout>
+    </adminhtml>
+
+    <admin>
+        <routers>
+            <admin_magesplit>
+                <use>admin</use>
+                <args>
+                    <module>KJ_MageSplit</module>
+                    <frontName>admin_magesplit</frontName>
+                </args>
+            </admin_magesplit>
+        </routers>
+    </admin>
+
 </config>
