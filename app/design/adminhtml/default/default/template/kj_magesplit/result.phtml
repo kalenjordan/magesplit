@@ -6,4 +6,12 @@
 
 ?>
 
-<?php echo $this->getResults(); ?>
+<?php foreach ($this->getResults() as $testName => $result): ?>
+    <h5><?php echo $testName; ?></h5>
+    <?php if (isset($result['on'])): ?>
+        <li>Enabled: <?php echo $result['on'];?> orders
+    <?php endif; ?>
+    <?php if (isset($result['off'])): ?>
+        <li>Disabled: <?php echo $result['off'];?> orders
+    <?php endif; ?>
+<?php endforeach; ?>
