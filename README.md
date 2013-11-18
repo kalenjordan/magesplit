@@ -14,6 +14,8 @@ testing services that are out there.
 
 **Installation**
 
+Include [jquery.cookie](https://github.com/carhartl/jquery-cookie)
+
 Install using modman:
 
     modman clone magesplit git@github.com:kalenjordan/magesplit.git

@@ -7,17 +7,6 @@
     </modules>
 
     <global>
-        <events>
-            <sales_order_place_after>
-                <observers>
-                    <magesplit_sales_order_place_after>
-                        <class>KJ_MageSplit_Model_Observer</class>
-                        <method>salesOrderPlaceAfter</method>
-                    </magesplit_sales_order_place_after>
-                </observers>
-            </sales_order_place_after>
-        </events>
-
         <blocks>
             <magesplit>
                 <class>KJ_MageSplit_Block</class>
@@ -39,6 +28,17 @@
                 </magesplit>
             </updates>
         </layout>
+
+        <events>
+            <sales_order_place_after>
+                <observers>
+                    <magesplit_sales_order_place_after>
+                        <class>KJ_MageSplit_Model_Observer</class>
+                        <method>salesOrderPlaceAfter</method>
+                    </magesplit_sales_order_place_after>
+                </observers>
+            </sales_order_place_after>
+        </events>
     </frontend>
 
     <adminhtml>
