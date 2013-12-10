@@ -49,7 +49,7 @@ function MageSplit()
     {
         if (! this.isCookieSet()) {
             var random = Math.random(0, 1);
-            jQuery.cookie(this._getCookieName(), random, {expires: this._cookieDuration});
+            jQuery.cookie(this._getCookieName(), random, {expires: this._cookieDuration, path: '/'});
         }
 
         return jQuery.cookie(this._getCookieName());
