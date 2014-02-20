@@ -9,9 +9,19 @@
 <?php foreach ($this->getResults() as $testName => $result): ?>
     <h5><?php echo $testName; ?></h5>
     <?php if (isset($result['on'])): ?>
-        <li>Enabled: <?php echo $result['on'];?> orders
+        <li>
+            Enabled: <?php echo $result['on']['count'];?> orders
+            <?php if (isset($_GET['grand_total'])): ?>
+                ,  <?php echo $result['on']['grand_total'];?> grand total
+            <?php endif; ?>
+        </li>
     <?php endif; ?>
     <?php if (isset($result['off'])): ?>
-        <li>Disabled: <?php echo $result['off'];?> orders
+        <li>
+            Disabled:<?php echo $result['off']['count'];?> orders
+            <?php if (isset($_GET['grand_total'])): ?>
+                ,  <?php echo $result['off']['grand_total'];?> grand total
+            <?php endif; ?>
+        </li>
     <?php endif; ?>
 <?php endforeach; ?>

@@ -17,10 +17,20 @@ class KJ_MageSplit_Block_Adminhtml_Result extends Mage_Core_Block_Template
             foreach ($orderData as $testName => $testRandomNumber) {
                 $onOrOff = ($testRandomNumber > 0.5) ? 'on' : 'off';
                 if (!isset($splitTestCounts[$testName][$onOrOff])) {
-                    $splitTestCounts[$testName][$onOrOff] = 0;
+                    $splitTestCounts[$testName][$onOrOff] = array(
+                        'count' => 0,
+                        'grand_total' => 0,
+                    );
                 }
 
-                $splitTestCounts[$testName][$onOrOff]++;
+                $splitTestCounts[$testName][$onOrOff]['count']++;
+
+                // @hack really bad hack. I think it's time to start storing MageSplit entries
+                // in the database so we can do this query without thousands of individual order loads
+                if (isset($_GET['grand_total'])) {
+                    $order = Mage::getModel('sales/order')->loadByIncrementId($orderId);
+                    $splitTestCounts[$testName][$onOrOff]['grand_total'] += $order->getData('grand_total');
+                }
             }
         }
 
