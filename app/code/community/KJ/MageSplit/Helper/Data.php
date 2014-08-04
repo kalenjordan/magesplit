@@ -9,4 +9,10 @@ class KJ_MageSplit_Helper_Data extends Mage_Core_Helper_Abstract
 
         return $dataDir;
     }
+
+    public function getCurrentTest()
+    {
+        return Mage::getStoreConfig('magesplit/settings/current_test');
+    }
+
 }

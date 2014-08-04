@@ -10,26 +10,49 @@ class KJ_MageSplit_Model_Observer
         /** @var Mage_Sales_Model_Order $order */
         $order = $observer->getData('order');
 
-        $magesplitCookies = array();
+        $mageSplitCookies = $this->_getMageSplitCookies();
+        $mageSplitCookiesCsv = $this->_getMageSplitCookiesCsv();
+        $mageSplitOrder = Mage::getModel('magesplit/order')
+            ->setData('entity_id', $order->getId())
+            ->setData('increment_id', $order->getIncrementId())
+            ->setData('cookies_csv', $mageSplitCookiesCsv);
+
+        $currentTest = Mage::helper('magesplit')->getCurrentTest();
+        if (isset($mageSplitCookies[$currentTest])) {
+            $mageSplitOrder->setData('split_test_name', $currentTest);
+            $mageSplitOrder->setData('split_test_cookie_value', $mageSplitCookies[$currentTest]);
+        }
+
+        $mageSplitOrder->save();
+    }
+
+    protected function _getMageSplitCookies()
+    {
+        $mageSplitCookies = array();
         foreach ($_COOKIE as $key => $val) {
             if (strpos($key, 'magesplit_') !== false) {
-                $magesplitCookies[$key] = $val;
+                $mageSplitCookies[$key] = $val;
             }
         }
 
-        $line = $order->getIncrementId();
-        foreach ($magesplitCookies as $key => $val) {
-            $line .= " - $key: $val";
-        }
-
-        $this->_writeLineToFile($line);
+        return $mageSplitCookies;
     }
 
-    protected function _writeLineToFile($line)
+    protected function _getMageSplitCookiesCsv()
     {
-        $filePath = Mage::helper('magesplit')->getDataFilePath();
-        file_put_contents($filePath, $line . "\n", FILE_APPEND);
+        $mageSplitCookies = $this->_getMageSplitCookies();
+        $mageSplitCookiesCsv = "";
 
-        return $this;
+        $i = 0;
+        foreach ($mageSplitCookies as $key => $val) {
+            if ($i > 0) {
+                $mageSplitCookiesCsv .= ", ";
+            }
+
+            $mageSplitCookiesCsv .= "$key: $val";
+            $i++;
+        }
+
+        return $mageSplitCookiesCsv;
     }
 }
