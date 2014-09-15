@@ -77,7 +77,8 @@ function MageSplit()
 
     this._log = function(message)
     {
-        if (window.console)
+        if (window.console) {
             console.log("Split Test: " + this._name + ": " + message);
+        }
     };
 }
