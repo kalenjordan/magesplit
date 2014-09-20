@@ -38,7 +38,7 @@
             <magesplit_setup>
                 <setup>
                     <module>KJ_MageSplit</module>
-                    <class>Clean_Core_Model_Mysql4_Setup</class>
+                    <class>KJ_MageSplit_Model_Mysql4_Setup</class>
                 </setup>
                 <connection>
                     <use>core_setup</use>
