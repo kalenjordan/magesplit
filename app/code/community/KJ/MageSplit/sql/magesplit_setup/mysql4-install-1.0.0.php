@@ -1,6 +1,6 @@
 <?php
 
-/** @var $this Clean_Core_Model_Mysql4_Setup */
+/** @var this KJ_MageSplit_Model_Mysql4_Setup */
 $this->startSetup();
 
 $this->createTable($this->getTable('magesplit/order'),
