@@ -14,6 +14,10 @@ testing services that are out there.
 
 **Installation**
 
+Install [Clean_Util](https://github.com/kalenjordan/cleanutil) - a utilities module that's used to handle a few utilities for the module.
+
+    modman clone cleanutil git@github.com:kalenjordan/cleanutil.git
+
 Include [jquery.cookie](https://github.com/carhartl/jquery-cookie)
 
 Install using modman:
