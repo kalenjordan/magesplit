@@ -1,7 +1,7 @@
 MageSplit
 =========
 
-**Overview**
+### Overview
 
 MageSplit is an extremely simple tool for running split tests in Magento.  
 The reason that I put it together was that I was just beginning to run
@@ -12,7 +12,7 @@ Also, the types of tests that I was doing didn't really require a nice
 visual editor, which is usually one of the main features of the A/B
 testing services that are out there.
 
-**Installation**
+### Installation
 
 Install [Clean_Util](https://github.com/kalenjordan/cleanutil) - a utilities module that's used to handle a few utilities for the module.
 
@@ -34,7 +34,7 @@ Then, to create a test, just pop into one of your `phtml` files, and:
          }
     </script>
 
-**How does it work?**
+### How does it work?
 
 All that it does is generates a random number per each visitor, storing
 it on a cookie.  If it's greater than 0.5, then it enables the experiment.
@@ -48,7 +48,7 @@ So, you get the idea - crazy simple and probably not very useful if you're
 doing anything fancy.  But if you're just getting started, may save you
 a minute or two fussing around with javascript cookies.
 
-**ProTips**
+### ProTips
 
 *1. Use your debug console*
 
