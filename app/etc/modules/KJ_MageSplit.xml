@@ -4,7 +4,9 @@
         <KJ_MageSplit>
             <active>true</active>
             <codePool>community</codePool>
-            <depends></depends>
+            <depends>
+                <Clean_Util/>
+            </depends>
         </KJ_MageSplit>
     </modules>
 </config>
